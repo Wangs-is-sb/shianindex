@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<!---正经人谁写注释啊（被打）-->
+<!-- 有问题？联系QQ:35361565 -->
+
+<head>
+    <title>诗岸起始页</title>
+    <meta charset="UTF-8">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script><!-- 图标呢~ -->
+</head>
+<style>
+    body {
+        background-image: url('1.jpg');
+        background-position: top;
+        background-repeat: no-repeat;
+        position: relative;
+    }/* 这里是背景 */
+
+    .pding {
+        padding-top: 5cm;
+        padding-left: 6cm;
+    }/* 间距 */
+
+    .padding {
+        padding-left: 13cm;
+    }/* 也是个间距 */
+
+    .header {
+        background-color: #fff9f9;
+        text-align: center;
+        padding: 20px;
+        border-radius: 25px;
+        width: 150px;
+        height: 20px;
+        opacity:0.7;
+        /* 猜猜这是什么（被打）这是一个dock栏？ */
+    }
+
+
+    .time {
+        font-family: 'Microsoft Yahei UI Light';
+        color: white;
+        font-size: 4em;
+    }/* 时间字体 */
+
+    .search-box {
+        position: absolute;
+        top: 7cm;
+        left: 18cm;
+        transform: translate(-50% -50%);
+        background: #ffffff;
+        height: 40px;
+        border-radius: 40px;
+        padding: 10px;
+    }
+
+    .search-btn {
+        width: 40px;
+        height: 39px;
+        border-radius: 50%;
+        background: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-txt {
+        border: none;
+        background: none;
+        outline: none;
+        float: left;
+        padding: 0;
+        color: black;
+        font-size: 16px;
+        transform: 0.4s;
+        line-height: 40px;
+        width: 300px;                                                   /* 搜索框，别动了（（（ */
+    }
+
+    @media screen and (max-width: 980px) {
+        #wrap {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        #content {
+            width: 60%;
+            padding: 5%;
+        }
+
+        #sidebar {
+            width: 30%;
+        }
+
+        #footer {
+            padding: 8% 5%;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media screen and (max-width: 650px) {
+        #header {
+            height: auto;
+        }
+
+        #searchform {
+            position: absolute;
+            top: 5px;
+            right: 0;
+        }
+
+        #content {
+            width: auto;
+            float: none;
+            margin: 20px 0;
+        }
+
+        #sidebar {
+            width: 100%;
+            float: none;
+            margin: 0;
+        }
+    }
+
+    html {
+        -webkit-text-size-adjust: none;
+    }
+
+
+    body {
+        max-width: 100%;
+        height: auto;
+        width: auto\9;
+    }
+    .opacity{
+        opacity:1.0;
+    }
+    /* 这些都是相应布局？能改就改一下吧 */
+</style>
+<script>
+    function time() {
+        window.setTimeout("time()", 1000);
+        var seconds = 1000
+        var minutes = seconds * 60
+        var hours = minutes * 60
+        var days = hours * 24
+        var years = days * 365
+        var today = new Date()
+        var todayYear = today.getFullYear()
+        var todayMonth = today.getMonth() + 1
+        var todayDate = today.getDate()
+        var todayHour = today.getHours()
+        var todayMinute = today.getMinutes()
+        var todaySecond = today.getSeconds()
+        var t1 = Date.UTC(2018, 4, 18, 00, 00, 00)
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond)
+        var diff = t2 - t1
+        var diffYears = Math.floor(diff / years)
+        var diffDays = Math.floor((diff / days) - diffYears * 365)
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours)
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes)
+        var minutes = diffMinutes < 10 ? "0" + diffMinutes : diffMinutes;
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds)
+        document.getElementById("time").innerHTML = diffHours + ":" + minutes
+    }
+    time()
+</script><!-- 时间获取 -->
+
+<body>
+    <div class="pding">
+        <b>
+            <p id="time" class="time"></p><!-- 时间 -->
+        </b>
+    </div>
+    <div class="search-box">
+        <input class="search-txt" type="text" name="" placeholder="山山超可爱!">
+        <a class="search-btn" href="https://www.baidu.com/s?wd=">
+            <i class="fas fa-search"></i><!-- 搜索框 -->
+        </a>
+    </div>
+</body>
+
+</html>
